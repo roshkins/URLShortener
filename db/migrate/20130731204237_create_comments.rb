@@ -1,6 +1,7 @@
-class CreateVisits < ActiveRecord::Migration
+class CreateComments < ActiveRecord::Migration
   def change
-    create_table :visits do |t|
+    create_table :comments do |t|
+      t.text :comment
       t.integer :short_url_id
       t.integer :user_id
       t.timestamps
