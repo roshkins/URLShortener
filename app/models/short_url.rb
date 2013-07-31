@@ -15,5 +15,9 @@ class ShortUrl < ActiveRecord::Base
    :through => :taggings,
    :source => :tag_topic
 
+  has_many :visits,
+  :class_name => "Visit",
+  :primary_key => :id,
+  :foreign_key => :short_url_id
 
 end
