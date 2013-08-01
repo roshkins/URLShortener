@@ -17,5 +17,9 @@ class User < ActiveRecord::Base
   :foreign_key => :user_id,
   :primary_key => :id
 
+  def self.find_by_email(email)
+    self.where("email = ?", email)[0]
+  end
+
 
 end

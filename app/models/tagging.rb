@@ -11,5 +11,8 @@ class Tagging < ActiveRecord::Base
   :foreign_key => :tag_topic_id,
   :primary_key => :id
 
+  def self.find_by_tag_topic(tt)
+    self.where("tag_topic = ?", tt)
+  end
 
 end
